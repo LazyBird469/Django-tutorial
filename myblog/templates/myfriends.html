@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>My Friends</h2>
+    {% for i in friends %}
+        {% if i.name == "mg mg" %}
+        <h2>{{ i.name }}</h2>
+        {% elif i.name == "Aung Thura Oo" %}
+        <a href = "#">{{ i.name }}</a>
+        {% else %}
+        <h5>{{ i.name }}</h5>
+        {% endif %}
+    
+    {% endfor %}
+   
+    {% for i in mylist %}
+       <a href = "{% url 'postdata' %}">{{ i }}</a>
+       {% endfor %}
+
+       It is {% now "D d M Y H:i:s" %} now.
+</body>
+</html>

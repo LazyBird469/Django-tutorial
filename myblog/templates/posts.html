@@ -1,0 +1,20 @@
+ {% load static %} <!-- Static files template tag -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>POST Data</h1>
+    <!-- <img src="{% static 'image/josefin-3TFvE51aVqA-unsplash.jpg' %}" alt="green leaf"> -->
+    {% for i in data %}
+    <h5>{{ i.title }}</h5>
+        <p>{{ i.post_body }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
