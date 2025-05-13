@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Post,Myfriend
 
 # Create your views here.
+def postdata(request):
     post_data = Post.objects.all()
     context = {'data': post_data}
     return render(request, 'posts.html', context)
