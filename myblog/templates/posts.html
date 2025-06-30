@@ -12,8 +12,13 @@
     <h1>POST Data</h1>
     <!-- <img src="{% static 'image/josefin-3TFvE51aVqA-unsplash.jpg' %}" alt="green leaf"> -->
     {% for i in data %}
-    <h5>{{ i.title }}</h5>
+
+     <a href="{% url 'detail' i.id %}">{{ i.title }}</a>
         <p>{{ i.post_body }}</p>
+        <p>{{ i.created | timesince}}ago</p>
+        <p>{% now "d M Y" %}</p>
+        <img src="{{ i.photo.url }}" alt="">
+
         <hr>
     {% endfor %}
 </body>

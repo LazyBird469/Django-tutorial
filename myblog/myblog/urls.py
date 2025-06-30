@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import postdata,myfriends_view
+from myapp.views import *
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -25,6 +25,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', postdata, name = 'postdata'),
     path('myfriends/', myfriends_view, name='myfriends'),
+    path('detail/<int:pk>/', postdetail, name='detail'),
+    path('create/', createpost, name='createpost'),
+    path('createform/', createform, name='createform'),
+    path('deleteblog/<int:pk>/', deleteblog, name='deleteblog'),
+    path('bloglist/', bloglist, name='bloglist'),
+    path('createblog/', createblog, name='createblog'),
+    path('update/<int:pk>/', blogupdate, name='blogupdate'),
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
